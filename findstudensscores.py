@@ -4,8 +4,8 @@
 __author__ = 'George Cui'
 
 class Stu:
-	def __init__(self, number):
-		self.number = number
+	def __init__(self, id):
+		self.id = id
 		self.score = '0'
 
 	def setName(self, name):
@@ -15,7 +15,7 @@ class Stu:
 		self.score = score
 
 	def __str__(self):
-		return self.number + ' ' + self.name + '   ' + self.score
+		return self.id + ' ' + self.name + '   ' + self.score
 
 def writescores(stus, resultfile):
 	result = open(resultfile, 'w')
@@ -27,11 +27,11 @@ def buildstrus(namesfile, scoresfile):
 	return setscores(stus, scoresfile)
 
 def createstus(namesfile):
-	numandnames = open(namesfile)
-	numandnameslines = numandnames.readlines()
+	idandnames = open(namesfile)
+	idndnameslines = idandnames.readlines()
 
 	stus = {}
-	for line in numandnameslines:
+	for line in idndnameslines:
 		sublines = line.split('\t')
 		stu, stu.name = Stu(sublines[0]), sublines[1].replace('\n',"")
 		stus[sublines[0]] = stu	
@@ -39,10 +39,10 @@ def createstus(namesfile):
 	return stus
 
 def setscores(stus, scoresfile):
-	numscores = open(scoresfile)
-	numscorelines = numscores.readlines()
+	idscores = open(scoresfile)
+	idscorelines = idscores.readlines()
 
-	for line in numscorelines:
+	for line in idscorelines:
 		sublines = line.split('\t')
 		try:
 			stus[sublines[0]].setScore(sublines[1].replace('\n',""))
