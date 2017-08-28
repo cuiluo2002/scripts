@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+__author__ = 'George Cui'
 
 import sys
 import os
