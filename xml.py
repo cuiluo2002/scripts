@@ -4,12 +4,11 @@ from lxml import etree
 # https://blog.csdn.net/ydw_ydw/article/details/82227699
 
 def decode(items):
-	print(items.attrib)
 	for item in items:
 		if isinstance(item, etree._Element):
 			decode(item)
-		if item.text != None and item.text.strip() != '':
-			print(item.tag)
+	#if items.text != None and items.text.strip() != '':
+	print("tag = %s, text = %s, attr = %s" % (items.tag, items.text, items.attrib))
 
 
 def main():
